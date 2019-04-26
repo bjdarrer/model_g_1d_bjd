@@ -1,4 +1,5 @@
 % Model G - Crank Nicolson Solver - plotting output from c++ solver file : modelg1d_bjd3b.cpp
+% Written by Brendan Darrer 26 April 2019.
 
 % Load .txt file arrays of time and etheron potentials as 2d arrays.
 A = load('/home/bjd/software/SQK_2/crank_nicolson/model_g_1d-master/modelg_1d_outfile_G.txt')
