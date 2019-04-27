@@ -41,4 +41,4 @@ xlabel('time / dimensionless')
 ylabel('G, X, Y, lapG, lapX, lapY / concentration / dimensionless')
 
 %saveas(gcf,'/home/bjd/octave/examples/code/bjd/Model G - Crank Nicolson Solver 1g.png')
-saveas(1,'/home/bjd/octave/examples/code/bjd/Model G - Crank Nicolson Solver 2b.png')
+%saveas(1,'/home/bjd/octave/examples/code/bjd/Model G - Crank Nicolson Solver 2b.png')
