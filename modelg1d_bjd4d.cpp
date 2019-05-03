@@ -116,6 +116,7 @@ void next_iteration( int t /* in computational units */ )
   // div(t,Nt) = t/Nt = t/180
   div_t tdiv = div( t, Nt );
   // if tdiv has no remainder i.e. 180/180 ---> BJD not sure about this one?
+  // Therefore enclosed if statement runs 100 times (Duration of time in system units)
   if( !tdiv.rem )
   {
     real lapG = laplacian( pnext, G, Mx/2 );
