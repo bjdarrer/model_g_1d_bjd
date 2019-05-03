@@ -79,9 +79,9 @@ real reaction( const real (*pcurr)[Mx+2], int R, int j, int t )
 void crank_nicolson( real (*pnext)[Mx+2], const real (*pcurr)[Mx+2], int R, int t )
 {
   real b[Mx], v[Mx];
-  // x = pnext ---> G, X, Y
+  //BJD: x = pnext ---> G, X, Y
   real *x = pnext[R]; // Set indices 1..Mx
-  // y = pcurr ----> phi_G, phi_X, phi_Y (see equations 13a to 13c in paper "Stationary Dissipative Solitons of Model G")
+  //BJD: y = pcurr ----> phi_G, phi_X, phi_Y (see equations 13a to 13c in paper "Stationary Dissipative Solitons of Model G")
   const real *y = pcurr[R];
   const real c = d[R]; // Crank-Nicolson coefficient
   *b = 2*c + 1;
@@ -109,7 +109,7 @@ real laplacian( const real (*pether)[Mx+2], int R, int j )
 void next_iteration( int t /* in computational units */ )
 {
   real (*pcurr)[Mx+2] = space[t&1];
-  // pnext --> G, X, Y 
+  //BJD: pnext --> G, X, Y 
   real (*pnext)[Mx+2] = space[t&1^1];
 
   for( int i=0 ; i<3 ; ++i ) crank_nicolson( pnext, pcurr, i, t );
