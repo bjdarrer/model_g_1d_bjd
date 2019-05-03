@@ -79,6 +79,7 @@ real reaction( const real (*pcurr)[Mx+2], int R, int j, int t )
 void crank_nicolson( real (*pnext)[Mx+2], const real (*pcurr)[Mx+2], int R, int t )
 {
   real b[Mx], v[Mx];
+  // x = pnext ---> G, X, Y
   real *x = pnext[R]; // Set indices 1..Mx
   const real *y = pcurr[R];
   const real c = d[R]; // Crank-Nicolson coefficient
@@ -107,6 +108,7 @@ real laplacian( const real (*pether)[Mx+2], int R, int j )
 void next_iteration( int t /* in computational units */ )
 {
   real (*pcurr)[Mx+2] = space[t&1];
+  // pnext --> G, X, Y 
   real (*pnext)[Mx+2] = space[t&1^1];
 
   for( int i=0 ; i<3 ; ++i ) crank_nicolson( pnext, pcurr, i, t );
