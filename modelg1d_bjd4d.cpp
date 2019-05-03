@@ -115,7 +115,7 @@ void next_iteration( int t /* in computational units */ )
   for( int i=0 ; i<3 ; ++i ) crank_nicolson( pnext, pcurr, i, t );
   // div(t,Nt) = t/Nt = t/180
   div_t tdiv = div( t, Nt );
-  // if tdiv has no remainder i.e. 180/180 ---> BJD not sure about this one?
+  // if tdiv has no remainder i.e. from 0 to 18000/180 = 0 to 100
   // Therefore enclosed if statement runs 100 times (Duration of time in system units)
   if( !tdiv.rem )
   {
