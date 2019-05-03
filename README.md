@@ -12,3 +12,5 @@ g++ -std=c++11 modelg1d_bjd2c.cpp
 In gnuplot use:
 
 gnuplot> plot 'modelg_1d_outfile_3.txt'
+
+File ```model_g_CN_plot_potentials_vs_radius_1d.m``` can run in Octave ( https://www.gnu.org/software/octave/ ) by typing ```model_g_CN_plot_potentials_vs_radius_1d``` in the command line.
