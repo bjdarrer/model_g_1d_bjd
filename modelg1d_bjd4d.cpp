@@ -113,8 +113,9 @@ void next_iteration( int t /* in computational units */ )
   real (*pnext)[Mx+2] = space[t&1^1];
 
   for( int i=0 ; i<3 ; ++i ) crank_nicolson( pnext, pcurr, i, t );
-
+  // div(t,Nt) = t/Nt = t/180
   div_t tdiv = div( t, Nt );
+  // if tdiv has no remainder i.e. 180/180 ---> BJD not sure about this one?
   if( !tdiv.rem )
   {
     real lapG = laplacian( pnext, G, Mx/2 );
