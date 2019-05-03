@@ -170,6 +170,7 @@ int main()
   cerr << "Nx = " << Nx << endl;
   cerr << "Nt = " << Nt << endl;
   init();
+  //Mt = Nt*Time = 180 * 100 = 18000 ---> Duration of time in computational units
   for( int t=0 ; t<Mt ; ++t ) next_iteration(t);
   real (*pfinal)[Mx+2] = space[Mt&1];
   for( int i=0 ; i<3 ; ++i ){
