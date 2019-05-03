@@ -81,6 +81,7 @@ void crank_nicolson( real (*pnext)[Mx+2], const real (*pcurr)[Mx+2], int R, int 
   real b[Mx], v[Mx];
   // x = pnext ---> G, X, Y
   real *x = pnext[R]; // Set indices 1..Mx
+  // y = pcurr ----> phi_G, phi_X, phi_Y (see equations 13a to 13c in paper "Stationary Dissipative Solitons of Model G")
   const real *y = pcurr[R];
   const real c = d[R]; // Crank-Nicolson coefficient
   *b = 2*c + 1;
